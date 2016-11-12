@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    ul
+      li
+        a(href='/inicio') Inicio
+        a(href='/quienes-somos') Quienes Somos
+        a(href='/productos') Productos
+        a(href='/contactanos') Contáctanos
+    for each thing in data
+      h1= thing.nombre
+      h2 categoria: #{thing.categoria}
+      h2 precio: #{thing.precio}
+      h2 descripcion: #{thing.descripcion}
+      a(href='/producto/#{thing.nombre}') Ver Más
+
