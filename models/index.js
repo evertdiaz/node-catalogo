@@ -19,7 +19,7 @@ var productoSchema = new Schema({
 	categoria: String,
 	img: String,
 	descripcion: String,
-	precio: String,
+	precio: Number,
 	colores: String,
 })
 mongoose.model('producto', productoSchema)

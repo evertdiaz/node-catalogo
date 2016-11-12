@@ -10,7 +10,7 @@ html
         a(href='/quienes-somos') Quienes Somos
         a(href='/productos') Productos
         a(href='/contactanos') Contáctanos
-    for each thing in data
+    each thing in data
       h1= thing.nombre
       h2 categoria: #{thing.categoria}
       h2 precio: #{thing.precio}

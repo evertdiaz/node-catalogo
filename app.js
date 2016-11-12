@@ -4,11 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var producto = require('./routes/producto');
 var productos = require('./routes/productos');
+var admin = require('./routes/admin');
+var api = require('./routes/api');
 
 var app = express();
 
@@ -25,7 +28,8 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://ediazb:ediazb@ds147167.mlab.com:47167/heroku_l27gc88z')
+mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_7gzlkhdg')
+
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -33,6 +37,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/producto', producto);
 app.use('/productos', productos);
+app.use('/admin', admin);
+app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
