@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_7gzlkhdg')
+mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq')
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
