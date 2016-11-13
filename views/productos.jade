@@ -1,19 +1,154 @@
 doctype html
-html
+html(lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(charset='UTF-8')
+    title Boutique - eCommerce
+    link(rel='stylesheet', type='text/css', href='../css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/owl.carousel.css')
+    link(rel='stylesheet', type='text/css', href='../css/chosen.css')
+    link(rel='stylesheet', type='text/css', href='../css/lightbox.min.css')
+    link(rel='stylesheet', type='text/css', href='../css/pe-icon-7-stroke.css')
+    link(rel='stylesheet', type='text/css', href='../css/jquery.mCustomScrollbar.css')
+    link(rel='stylesheet', type='text/css', href='../css/magnific-popup.css')
+    link(rel='stylesheet', type='text/css', href='../css/style.css')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Montserrat')
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400italic,400,700,700italic,900,900italic', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:300,100,100italic,300italic,400,400italic,500,500italic,700,700italic,900,900italic', rel='stylesheet', type='text/css')
   body
-    ul
-      li
-        a(href='/') Inicio
-        a(href='/quienes-somos') Quienes Somos
-        a(href='/productos') Productos
-        a(href='/contactanos') Contáctanos
-    each thing in data
-      h1= thing.nombre
-      h2 categoria: #{thing.categoria}
-      h2 precio: #{thing.precio}
-      h2 descripcion: #{thing.descripcion}
-      a(href='/producto/#{thing.nombre}') Ver Más
-
+    #box-mobile-menu.box-mobile-menu.full-height.full-width
+      .box-inner
+        span.close-menu
+          span.icon.pe-7s-close
+    #header-ontop.is-sticky
+    header#header.header.style3
+      .container
+        .main-menu-wapper
+          .row
+            .col-sm-12.col-md-12.menu-wapper
+              .top-header(style='padding-top:0px')
+                span.mobile-navigation
+                  i.fa.fa-bars
+                .col-sm-4
+                  br
+                .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
+                  .logo
+                    a(style='text-align:center', href='#')
+                      img(src='../images/logos/1.png', alt='')
+              .col-sm-12(style='text-align:center')
+                ul.boutique-nav.main-menu.clone-main-menu
+                  li.menu-item-has-children.item-megamenu
+                    a(href='/') Inicio
+                  li.menu-item-has-children
+                    a(href='/quienes-somos') Quisuruco
+                  li.active.menu-item-has-children
+                    a(href='/productos') Productos
+                  li.menu-item-has-children
+                    a(href='/promociones') Promociones
+                  li.menu-item-has-children
+                    a(href='/contactanos') Contacto
+    .main-container.shop-with-banner.left-slidebar
+      .block-paralax3(style="background-image: url('../images/subscribe.jpg');background-repeat:no-repeat;margin-top:0px")
+        .container
+          .row
+            .col-sm-12.col-md-3
+              br
+            // Añadir un fondo con transparencia
+            .col-sm-12.col-md-9(style='text-align:left')
+              h1 PRODUCTOS
+      .container(style='margin-top:50px')
+        .breadcrumbs.style2
+          a(href='#') Home
+          span Categories_Leftsidebar
+        .row
+          .main-content.col-sm-8.col-md-9
+            .shop-top
+              .shop-top-left
+                span.woocommerce-result-count Showing 1-9 of 2268 results
+            ul.product-list-grid.desktop-columns-3.tablet-columns-2.mobile-columns-1.row.flex-flow
+              li.product-item.style4.col-sm-6.col-md-4
+                .product-inner
+                  .product-thumb.has-back-image
+                    a(href='#')
+                      img(src='../images/products/left1.png', alt='')
+                    a.back-image(href='#')
+                      img(src='../images/products/left2.png', alt='')
+                    .add-cart-wapper
+                      a.button.add_to_cart_button(href='#') Pedir
+                  .product-info
+                    h3.product-name
+                      a(href='#') London Star Sweatshirt
+                    span.price
+                      ins S/100
+            //
+              <div class="navigation">
+              <ul>
+              <li><a href="#"><i class="fa fa-long-arrow-left"></i></a></li>
+              <li><a href="#">1</a></li>
+              <li class="active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#"><i class="fa fa-long-arrow-right"></i></a></li>
+              </ul>
+              </div>
+          .col-sm-4.col-md-3.sidebar
+            // Product category
+            .widget.widget_product_categories
+              h2.widget-title Categories
+              ul.product-categories
+                li
+                  a(href='#') Sunglasses
+                  span.count-item (25)
+                li
+                  a(href='#') Watches
+                  span.count-item (23)
+                li.current-cat
+                  a(href='#') Jewelry
+                  span.count-item (9)
+                li
+                  a(href='#') Hats, Scraves & Gloves
+                  span.count-item (12)
+                li
+                  a(href='#') Underwear & Socks
+                  span.count-item (48)
+                li
+                  a(href='#') Grooming
+                  span.count-item (6)
+                li
+                  a(href='#') Belts
+                  span.count-item (18)
+            // ./Product category
+    footer.footer
+      .footer-top
+        .container
+          .row.flex-flow(style='color:white')
+            .col-sm-1
+              br
+            .col-sm-3(style='text-align:center')
+              | Av. Prueba 123, Lima
+            .col-sm-4(style='text-align:center')
+              strong  QUISURUCO 
+            .col-sm-3(style='text-align:center')
+              | (01) 123 4567
+            .col-sm-1
+              br
+            .col-sm-12(style='text-align:center')
+              br
+              a(href='http://devs.com.pe') Diseñado por DEVS
+    a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
+      i.fa.fa-arrow-up
+    script(type='text/javascript', src='../js/jquery-2.1.4.min.js')
+    script(type='text/javascript', src='../js/bootstrap.min.js')
+    script(type='text/javascript', src='../js/owl.carousel.min.js')
+    script(type='text/javascript', src='../js/chosen.jquery.min.js')
+    script(type='text/javascript', src='../js/Modernizr.js')
+    script(type='text/javascript', src='../js/jquery-ui.min.js')
+    script(type='text/javascript', src='../js/lightbox.min.js')
+    script(type='text/javascript', src='../js/masonry.pkgd.min.js')
+    script(type='text/javascript', src='../js/imagesloaded.pkgd.min.js')
+    script(type='text/javascript', src='../js/isotope.pkgd.min.js')
+    script(type='text/javascript', src='../js/jquery.mCustomScrollbar.concat.min.js')
+    script(type='text/javascript', src='../js/jquery.parallax-1.1.3.js')
+    script(type='text/javascript', src='../js/jquery.magnific-popup.min.js')
+    script(type='text/javascript', src='../js/masonry.js')
+    script(type='text/javascript', src='../js/functions.js')

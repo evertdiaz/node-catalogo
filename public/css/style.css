@@ -2262,6 +2262,7 @@ blockquote.style2:after{
     -o-transition: padding 0.5s ease 0s;
     transition: padding 0.5s ease 0s;
     background-color: #fff;
+    padding-bottom: 0px;
 }
 .header.ontop .main-header {
     display: none;

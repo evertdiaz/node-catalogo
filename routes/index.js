@@ -14,4 +14,8 @@ router.get('/contactanos', function(req, res, next) {
   res.render('contactanos', { title: 'Contáctanos' });
 });
 
+router.get('/promociones', function(req, res, next) {
+  res.render('promociones', { title: 'Promociones' });
+});
+
 module.exports = router;

@@ -9,4 +9,11 @@ router.get('/', function(req, res, next) {
 	})
 });
 
+router.get('/:categoria', function(req, res, next) {
+	// De igual manera sería buscar por name
+  Producto.find({categoria: req.params.categoria}, function(err, user) {
+    res.render('categoria', { data: user, title: "Categoria"})
+  })
+})
+
 module.exports = router;
