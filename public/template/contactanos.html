@@ -3,7 +3,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Boutique - eCommerce</title>
+    <meta name="description" content="Joyería Quisuruco te brinda las mejores opciones en joyas y accesorios.">
+    <meta name="keywords" content="joyeria, joyas, anillos, collares">
+    <meta property="og:title" content="Joyería Quisuruco" />
+    <meta property="og:image" content="/images/logo.png" />
+    <title>Contáctanos</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/owl.carousel.css">
@@ -34,7 +38,7 @@
                             <br>
                         </div>
                         <div class="col-sm-4 col-md-4 logo-wapper" style="text-align:center">
-                            <div class="logo">
+                            <div class="logo" style="padding-top:25px">
                                 <a style="text-align:center" href="#"><img src="../images/logos/1.png" alt=""></a>
                             </div>
                         </div>
@@ -71,7 +75,7 @@
             <div class="row">
                 <!-- Añadir un fondo con transparencia -->
                 <div class="col-sm-12 col-md-9" style="text-align:left">
-                    <h1>CONTACTANOS</h1>
+                    <h1 style="font-weight:bold">CONTACTANOS</h1>
                 </div>
             </div>
         </div>
@@ -84,27 +88,36 @@
         </div>
         <div class="col-sm-12 col-md-8" style="text-align:center">
             <h2>ESCRÍBENOS</h2>
-            <form>
-                <input type="text" placeholder="Nombre"> <br>
-                <input type="text" placeholder="Correo"> <br>
-                <input type="text" placeholder="Numero"> <br>
-                <input type="text" placeholder="Producto de Interes"> <br>
-                <input type="textarea" placeholder="Mensaje"> <br>
-                <input type="submit">
+            <form action="https://formspree.io/contacto@joyeriaquisuruco.com" method="POST">
+                <input style="margin-bottom:10px" name="Nombre" type="text" size="30" placeholder="Nombre"> <br>
+                <input style="margin-bottom:10px" name="Correo" type="text" size="30" placeholder="Correo"> <br>
+                <input style="margin-bottom:10px" name="Numero" type="text" size="30" placeholder="Numero"> <br>
+                <input type="hidden" name="_next" value="/gracias" />
+                <input style="margin-bottom:10px" name="Producto Interes" type="text" size="30" placeholder="Producto de Interes"> <br>
+                <textarea style="margin-bottom:10px" name="Mensaje" type="text" rows="10" cols="40">Cuéntanos, en qué podemos ayudarte.</textarea> <br>
+                <input style="margin-bottom:10px" type="submit">
             </form>
             <br> <br>
-            <img src="http://facebook.com/logo.png">
+            <i style="font-size:50px" class="fa fa-whatsapp"></i>
             <h3>970 412 625 / 952 164 828 / 978 466 950</h3>
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-instagram"></i>
+            <br>
+            <a target="_blank" href="https://facebook.com" style="font-size:30px">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a target="_blank" href="https://twitter.com.com" style="font-size:30px">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a target="_blank" href="https://instagram.com" style="font-size:30px">
+                <i class="fa fa-instagram"></i>
+            </a>
+            
         </div>
     </div>
     
 </div>
 
 
-<footer class="footer">
+<footer class="footer" style="padding-bottom:25px">
         <div class="footer-top">
             <div class="container">
                 <div class="row flex-flow" style="color:white">
@@ -125,7 +138,7 @@
                     </div>
                     <div class="col-sm-12" style="text-align:center">
                         <br>
-                        <a href="http://devs.com.pe">Diseñado por DEVS</a>
+                        <a href="http://devs.com.pe" target="_blank" style="font-size:10px;color:white">Diseñado por DEVS</a>
                     </div>
                 </div>
             </div>
