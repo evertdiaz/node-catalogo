@@ -3,7 +3,11 @@ html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(charset='UTF-8')
-    title Boutique - eCommerce
+    meta(name='description', content='Joyería Quisuruco te brinda las mejores opciones en joyas y accesorios.')
+    meta(name='keywords', content='joyeria, joyas, anillos, collares')
+    meta(property='og:title', content='Joyería Quisuruco')
+    meta(property='og:image', content='/images/logo.png')
+    title Productos
     link(rel='stylesheet', type='text/css', href='../css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='../css/font-awesome.min.css')
     link(rel='stylesheet', type='text/css', href='../css/owl.carousel.css')
@@ -23,31 +27,30 @@ html(lang='en')
           span.icon.pe-7s-close
     #header-ontop.is-sticky
     header#header.header.style3
-      .container
-        .main-menu-wapper
-          .row
-            .col-sm-12.col-md-12.menu-wapper
-              .top-header(style='padding-top:0px')
-                span.mobile-navigation
-                  i.fa.fa-bars
-                .col-sm-4
-                  br
-                .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                  .logo
-                    a(style='text-align:center', href='#')
-                      img(src='../images/logos/1.png', alt='')
-              .col-sm-12(style='text-align:center')
-                ul.boutique-nav.main-menu.clone-main-menu
-                  li.menu-item-has-children.item-megamenu
-                    a(href='/') Inicio
-                  li.menu-item-has-children
-                    a(href='/quienes-somos') Quisuruco
-                  li.active.menu-item-has-children
-                    a(href='/productos') Productos
-                  li.menu-item-has-children
-                    a(href='/promociones') Promociones
-                  li.menu-item-has-children
-                    a(href='/contactanos') Contacto
+      .main-menu-wapper
+        .row
+          .col-sm-12.col-md-12.menu-wapper
+            .top-header(style='padding-top:0px')
+              span.mobile-navigation
+                i.fa.fa-bars
+              .col-sm-4
+                br
+              .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
+                .logo(style='padding-top:25px')
+                  a(style='text-align:center', href='#')
+                    img(src='../images/logos/1.png', alt='')
+            .col-sm-12(style='text-align:center')
+              ul.boutique-nav.main-menu.clone-main-menu
+                li.menu-item-has-children.item-megamenu
+                  a(href='/') Inicio
+                li.menu-item-has-children
+                  a(href='/quienes-somos') Quisuruco
+                li.active.menu-item-has-children
+                  a(href='/productos') Productos
+                li.menu-item-has-children
+                  a(href='/promociones') Promociones
+                li.menu-item-has-children
+                  a(href='/contactanos') Contacto
     .main-container.shop-with-banner.left-slidebar
       .block-paralax3(style="background-image: url('../images/subscribe.jpg');background-repeat:no-repeat;margin-top:0px")
         .container
@@ -118,7 +121,7 @@ html(lang='en')
                   a(href='#') Belts
                   span.count-item (18)
             // ./Product category
-    footer.footer
+    footer.footer(style='padding-bottom:25px')
       .footer-top
         .container
           .row.flex-flow(style='color:white')
@@ -134,7 +137,7 @@ html(lang='en')
               br
             .col-sm-12(style='text-align:center')
               br
-              a(href='http://devs.com.pe') Diseñado por DEVS
+              a(href='http://devs.com.pe', target='_blank', style='font-size:10px;color:white') Diseñado por DEVS
     a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
       i.fa.fa-arrow-up
     script(type='text/javascript', src='../js/jquery-2.1.4.min.js')

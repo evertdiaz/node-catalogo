@@ -3,7 +3,11 @@ html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(charset='UTF-8')
-    title Boutique - eCommerce
+    meta(name='description', content='Joyería Quisuruco te brinda las mejores opciones en joyas y accesorios.')
+    meta(name='keywords', content='joyeria, joyas, anillos, collares')
+    meta(property='og:title', content='Joyería Quisuruco')
+    meta(property='og:image', content='/images/logo.png')
+    title Contáctanos
     link(rel='stylesheet', type='text/css', href='../css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='../css/font-awesome.min.css')
     link(rel='stylesheet', type='text/css', href='../css/owl.carousel.css')
@@ -32,7 +36,7 @@ html(lang='en')
               .col-sm-4
                 br
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                .logo
+                .logo(style='padding-top:25px')
                   a(style='text-align:center', href='#')
                     img(src='../images/logos/1.png', alt='')
             .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
@@ -53,33 +57,38 @@ html(lang='en')
           .row
             // Añadir un fondo con transparencia
             .col-sm-12.col-md-9(style='text-align:left')
-              h1 CONTACTANOS
+              h1(style='font-weight:bold') CONTACTANOS
     .container(style='margin-top:50px;margin-bottom:25px')
       .row
         .col-md-2
           br
         .col-sm-12.col-md-8(style='text-align:center')
           h2 ESCRÍBENOS
-          form
-            input(type='text', placeholder='Nombre')
+          form(action='https://formspree.io/contacto@joyeriaquisuruco.com', method='POST')
+            input(style='margin-bottom:10px', name='Nombre', type='text', size='30', placeholder='Nombre')
             br
-            input(type='text', placeholder='Correo')
+            input(style='margin-bottom:10px', name='Correo', type='text', size='30', placeholder='Correo')
             br
-            input(type='text', placeholder='Numero')
+            input(style='margin-bottom:10px', name='Numero', type='text', size='30', placeholder='Numero')
             br
-            input(type='text', placeholder='Producto de Interes')
+            input(type='hidden', name='_next', value='/gracias')
+            input(style='margin-bottom:10px', name='Producto Interes', type='text', size='30', placeholder='Producto de Interes')
             br
-            input(type='textarea', placeholder='Mensaje')
+            textarea(style='margin-bottom:10px', name='Mensaje', type='text', rows='10', cols='40') Cuéntanos, en qué podemos ayudarte.
             br
-            input(type='submit')
+            input(style='margin-bottom:10px', type='submit')
           br
           br
-          img(src='http://facebook.com/logo.png')
+          i.fa.fa-whatsapp(style='font-size:50px')
           h3 970 412 625 / 952 164 828 / 978 466 950
-          i.fa.fa-facebook
-          i.fa.fa-twitter
-          i.fa.fa-instagram
-    footer.footer
+          br
+          a(target='_blank', href='https://facebook.com', style='font-size:30px')
+            i.fa.fa-facebook
+          a(target='_blank', href='https://twitter.com.com', style='font-size:30px')
+            i.fa.fa-twitter
+          a(target='_blank', href='https://instagram.com', style='font-size:30px')
+            i.fa.fa-instagram
+    footer.footer(style='padding-bottom:25px')
       .footer-top
         .container
           .row.flex-flow(style='color:white')
@@ -95,7 +104,7 @@ html(lang='en')
               br
             .col-sm-12(style='text-align:center')
               br
-              a(href='http://devs.com.pe') Diseñado por DEVS
+              a(href='http://devs.com.pe', target='_blank', style='font-size:10px;color:white') Diseñado por DEVS
     a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
       i.fa.fa-arrow-up
     script(type='text/javascript', src='../js/jquery-2.1.4.min.js')

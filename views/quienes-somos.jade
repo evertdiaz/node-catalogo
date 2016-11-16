@@ -3,7 +3,11 @@ html(lang='en')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(charset='UTF-8')
-    title Boutique - eCommerce
+    meta(name='description', content='Joyería Quisuruco te brinda las mejores opciones en joyas y accesorios.')
+    meta(name='keywords', content='joyeria, joyas, anillos, collares')
+    meta(property='og:title', content='Joyería Quisuruco')
+    meta(property='og:image', content='/images/logo.png')
+    title Joyería Quisuruco
     link(rel='stylesheet', type='text/css', href='../css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='../css/font-awesome.min.css')
     link(rel='stylesheet', type='text/css', href='../css/owl.carousel.css')
@@ -32,7 +36,7 @@ html(lang='en')
               .col-sm-4
                 br
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                .logo
+                .logo(style='padding-top:25px')
                   a(style='text-align:center', href='#')
                     img(src='../images/logos/1.png', alt='')
             .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
@@ -53,40 +57,40 @@ html(lang='en')
           .row
             // Añadir un fondo con transparencia
             .col-sm-12.col-md-9(style='text-align:left')
-              h1 QUISURUCO JEWELRY
+              h1(style='font-weight:bold') Conócenos
     .container(style='margin-top:50px;margin-bottom:25px')
       h2 MISIÓN
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      p(font-style='italic')
+        | “Somos una empresa dedicada a la producción y comercialización de joyas, ofreciéndoles artículos finos tendentes a la moda que hacen única su estilo y elegancia de nuestros clientes”
       h2 VISIÓN
       p
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | “Liderar la industria de la joyería en alta calidad y ser la mejor opción de nuestros clientes”
+      br
       h2 VALORES
-      ul
-        li SERIEDAD: asdsakd dsajnsdasd sakdsandasd askjdasndadj ad
-        li SERVICIO AL CLIENTE: asdkljsad asdkjashdksad kad kasldnasjdna kj djkabdkab
+      ul(style='margin-left:15px')
         li
-          | COMPROMISO: asdklasd sadjas dskad snfjasfals csa avnasjv asn akv asvavkjasvnka vka svka sajv kas va
+          | SERIEDAD: Nos enfocamos en tener una alta responsabilidad y cumplimos justo tiempo en los contratos con nuestros clientes.
         li
-          | LEALTAD: asdsandal dasjkd askdmksald adl ada ndlw dkw dlwdw dwlakd ad wajdnawljd
-        li TRABAJO EN EQUIPO: sadlkasd as dasd asm,d asdk wdjw qd qwd qwdqwdqwdqwdqwd 
+          | SERVICIO AL CLIENTE: Buscamos la atención más agradable  y óptima hacia nuestros clientes.
+        li
+          | COMPROMISO: Nos dedicamos en  llegar al objetivo establecido y cumplimos responsablemente con las actividades propias de la empresa.
+        li
+          | LEALTAD: Tenemos un compromiso y mostramos fidelidad. Hacemos con respeto nuestras responsabilidades.
+        li
+          | TRABAJO EN EQUIPO: Trabajamos en sinergia con todo el personal de la empresa para  lograr satisfacer las expectativas de nuestros clientes
+      br
+      br
       h2 OBJETIVOS
-      ul
-        li  Lorem ipsum dolor sit amet
-        li  consectetur adipisicing elit
+      ul(style='margin-left:15px')
+        li  Desarrollar una marca y ser reconocida a nivel nacional.
+        li  Aumentar nuestra gama de productos por ende generar mayores ventas.
         li
-          | sed do eiusmod
-          | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        li  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        li  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        li  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        li  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          | Acogernos a la tecnología para mejorar la optimización de nuestros procesos productivos.
+        li  Crear e innovar  modelos que hagan diferenciador de nuestra competencia.
+        li
+          | Desarrollar un equipo calificado en todos nuestros talentos humanos para tener un mejor desempeño laboral y profesional dentro de nuestra empresa.
+        li  Aperturar nuevos punto de venta.
+        li  Desarrollar estrategia de marketing para mejorar.
       .row(style='margin-top:50px')
         .col-sm-12.col-md-5(style='text-align:center')
           h2
@@ -98,7 +102,7 @@ html(lang='en')
         .col-sm-12.col-md-7(style='text-align:center')
           h1 ACA VA ORGANIGRAMA
           img(src='')
-    footer.footer
+    footer.footer(style='padding-bottom:25px')
       .footer-top
         .container
           .row.flex-flow(style='color:white')
@@ -114,7 +118,7 @@ html(lang='en')
               br
             .col-sm-12(style='text-align:center')
               br
-              a(href='http://devs.com.pe') Diseñado por DEVS
+              a(href='http://devs.com.pe', target='_blank', style='font-size:10px;color:white') Diseñado por DEVS
     a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
       i.fa.fa-arrow-up
     script(type='text/javascript', src='../js/jquery-2.1.4.min.js')
