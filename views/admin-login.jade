@@ -1,13 +1,59 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+  head(lang='es')
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width,initial-scale=1,user-scalable=no')
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    title Login
+    link(href="img/favicon.144x144.png", rel="apple-touch-icon", type="image/png", sizes="144x144")
+    link(href="img/favicon.114x114.png", rel="apple-touch-icon", type="image/png", sizes="114x114")
+    link(href="img/favicon.72x72.png", rel="apple-touch-icon", type="image/png", sizes="72x72")
+    link(href="img/favicon.57x57.png", rel="apple-touch-icon", type="image/png")
+    link(href="img/favicon.png", rel="icon", type="image/png")
+    link(href="img/favicon.ico", rel="shortcut icon")
+    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    script(src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js")
+    script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
+    link(rel="stylesheet", href="css/separate/pages/login.min.css")
+    link(rel="stylesheet", href="css/lib/font-awesome/font-awesome.min.css")
+    link(rel="stylesheet", href="css/lib/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="css/main.css")
   body
-    ul
-      li
-        a(href='/') Inicio
-        a(href='/quienes-somos') Quienes Somos
-        a(href='/productos') Productos
-        a(href='/contactanos') Contáctanos
-    h1 Hola este es el login
+    .page-center
+      .page-center-in
+        .container-fluid
+          form.sign-box
+            .sign-avatar
+              img(src='img/logo-2.png', alt='')
+            header.sign-title Login
+            .form-group
+              input(type='text', class='form-control', placeholder='Usuario')
+              input(type='password', class='form-control', placeholder='Contraseña')
+            button.btn.btn-rounded(type='submit') Sign in
+            p.sign-note Sistema de Administración
+              br
+              a(href='http://devs.com.pe') ¿Necesitas mas Información?
+    script(src="js/lib/jquery/jquery.min.js")
+    script(src="js/lib/tether/tether.min.js")
+    script(src="js/lib/bootstrap/bootstrap.min.js")
+    script(src="js/plugins.js")
+    script(type="text/javascript", src="js/lib/match-height/jquery.matchHeight.min.js")
+    script.
+      $(function() {
+        $('.page-center').matchHeight({
+          target: $('html')
+        });
+
+        $(window).resize(function(){
+          setTimeout(function(){
+              $('.page-center').matchHeight({ remove: true });
+              $('.page-center').matchHeight({
+                target: $('html')
+              });
+          },100);
+        });
+      });
+    script(src="js/app.js")

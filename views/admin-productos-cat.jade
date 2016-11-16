@@ -91,7 +91,7 @@ html
         li.orange-red.with-sub
           a(href='/admin/ayuda')
             i.font-icon.font-icon-help
-            span.lbl Support
+            span.lbl Ayuda
       section
         header.side-menu-title Enlaces de Interés
         ul.side-menu-list
@@ -157,10 +157,10 @@ html
           .control-item-content
             each thing in data2
               .control-item-content-text
-                a(href='productos/categoria/#{thing.nombre}')= thing.nombre
+                a(href='/admin/productos/categoria/#{thing.nombre}')= thing.nombre
         li.add
           .control-item-header
-            a.icon-toggle.no-caret(href='producto/nuevo')
+            a.icon-toggle.no-caret(href='/admin/producto/nuevo')
               span
               span.icon.fa.fa-plus
             span.text

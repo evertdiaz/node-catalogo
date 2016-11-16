@@ -77,21 +77,21 @@ html
     nav.side-menu
       ul.side-menu-list
         li.blue-dirty
-          a(href='productos')
+          a(href='/admin/productos')
             span.glyphicon.glyphicon-th
             span.lbl Productos
         li.magenta.with-sub
-          a(href='categorias')
+          a(href='/admin/categorias')
             span.glyphicon.glyphicon-list-alt
             span.lbl Categorías
         li.brown.with-sub
-          a(href='promociones')
+          a(href='/admin/promociones')
             span.glyphicon.glyphicon-list
             span.lbl Promociones
         li.orange-red.with-sub
-          a(href='ayuda')
+          a(href='/admin/ayuda')
             i.font-icon.font-icon-help
-            span.lbl Support
+            span.lbl Ayuda
       section
         header.side-menu-title Enlaces de Interés
         ul.side-menu-list
@@ -158,7 +158,7 @@ html
                 a(href='/admin/promociones/categoria/#{thing.nombre}')= thing.nombre
         li.add
           .control-item-header
-            a.icon-toggle.no-caret(href='/admin/promocion/nuevo')
+            a.icon-toggle.no-caret(href='/admin/promocion-nuevo')
               span
               span.icon.fa.fa-plus
             span.text

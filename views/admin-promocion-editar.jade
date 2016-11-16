@@ -93,7 +93,7 @@ html
         li.orange-red.with-sub
           a(href='/admin/ayuda')
             i.font-icon.font-icon-help
-            span.lbl Support
+            span.lbl Ayuda
       section
         header.side-menu-title Enlaces de Interés
         ul.side-menu-list
@@ -130,10 +130,17 @@ html
                 form
                   label(for='nombre') Nombre:
                   input(type='text', name='nombre', value='#{thing.nombre}')
+                  br
+                  select(name='categoria')
+                    each thing1 in data2
+                      option(value='#{thing1.nombre}')= thing1.nombre
                   br  
+
                   label(for='descripcion') Descripcion:
                   input(type='text', name='descripcion', value='#{thing.descripcion}')
                   br  
+                  label(for='descuento') Descuento:
+                  input(type='number', name='descuento', value='#{thing.descuento}')
                   input#guardar(type='submit', value='guardar')
               // .box-typical-body
             // .box-typical-dashboard

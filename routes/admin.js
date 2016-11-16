@@ -90,16 +90,20 @@ router.get('/promociones/categoria/:nombre', function(req, res, next){
 //Vista para editar una promocion
 router.get('/promocion/:id', function(req, res, next) {
 	Promocion.find({_id: req.params.id}, function(err, promo) {
-		res.render('admin-promocion-editar', { data: promo , title: "Editar Promocion"})
+		Categoria.find(function(err, categorias) {
+			res.render('admin-promocion-editar', { data: promo, data2:categorias, title: "Editar Promocion"})
+		})
 	})
 })
 
 //Vista para nueva promocion
-router.get('/promocion/nuevo', function(req, res, next) {
+
+router.get('/promocion-nuevo/', function(req, res, next) {
 	Categoria.find(function(err, categorias) {
 		res.render('admin-promocion-nuevo', { data: categorias, title: "Nuevo producto" })	
 	})
 })
+
 //Vista para Mostrar Ayuda
 router.get('/ayuda', function(req, res, next) {
 	res.render('ayuda', { title: 'Ayuda' })
