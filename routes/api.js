@@ -1,6 +1,8 @@
 var express = require('express')
 var router = express.Router()
 var Producto = require('../models').producto
+var Categoria = require('../models').categoria
+var Promocion = require('../models').promocion
 
 //GET
 router.get('/productos', function(req, res, next) {
@@ -12,6 +14,13 @@ router.get('/productos', function(req, res, next) {
 //GET Unitario
 router.get('/producto/:id', function(req, res, next) {
   Producto.find({_id: req.params.id}, function(err, user) {
+    res.send(user)
+  })
+})
+
+//GET Por categoria
+router.get('/productocat/:cat', function(req, res, next) {
+  Producto.find({categoria: req.params.cat}, function(err, user) {
     res.send(user)
   })
 })
@@ -66,5 +75,125 @@ router.delete('/producto/:id', function(req, res, next) {
 		});
 	});
 })
+
+
+//**************CATEGORIA************+
+//GET
+router.get('/categorias', function(req, res, next) {
+	Categoria.find(function(err, categorias) {
+		res.send(categorias)
+	})
+})
+
+
+//GET Por nombre
+router.get('/categoria/:nom', function(req, res, next) {
+  Categoria.find({nombre: req.params.nom}, function(err, cat) {
+    res.send(cat)
+  })
+})
+
+// POST
+router.post('/categoria/', function(req, res, next) {
+	var nombre = req.body.nombre
+	var descripcion = req.body.descripcion
+	var newcat = new Categoria()
+	newcat.nombre = nombre
+	newcat.descripcion = descripcion
+	newcat.save(function(err, savedCategoria) {
+		if(err) {
+			console.log(err)
+			return res.status(500).send()
+		}
+		return res.status(200).send()
+	})
+
+})
+
+// UPDATE
+router.put('/categoria/:id', function(req, res, next){
+	Categoria.findById(req.params.id, function(err, cat) {
+		cat.nombre = req.body.nombre;
+		cat.descripcion = req.body.descripcion;
+		cat.save(function(err) {
+			if(err) return res.send(500, err.message);
+			res.status(200).jsonp(cat);
+		});
+	});
+})
+
+//DELETE
+router.delete('/categoria/:id', function(req, res, next) {
+	Categoria.findById(req.params.id, function(err, cat) {
+		cat.remove(function(err) {
+			if(err) return res.send(500, err.message);
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
+})
+
+
+//*********PROMOCIONES***********+
+//GET
+router.get('/promociones', function(req, res, next) {
+	Promocion.find(function(err, promos) {
+		res.send(promos)
+	})
+})
+
+
+//GET Por nombre
+router.get('/promocion/:id', function(req, res, next) {
+  Promocion.find({_id: req.params.id}, function(err, promo) {
+    res.send(promo)
+  })
+})
+
+// POST
+router.post('/promocion/', function(req, res, next) {
+	var nombre = req.body.nombre
+	var descripcion = req.body.descripcion
+	var categoria = req.body.categoria
+	var descuento = req.body.descuento
+	var newpromo = new Promocion()
+	newpromo.nombre = nombre
+	newpromo.descripcion = descripcion
+	newpromo.categoria = categoria
+	newpromo.descuento = descuento
+	newpromo.save(function(err, savedPromocion) {
+		if(err) {
+			console.log(err)
+			return res.status(500).send()
+		}
+		return res.status(200).send()
+	})
+
+})
+
+// UPDATE
+router.put('/promocion/:id', function(req, res, next){
+	Promocion.findById(req.params.id, function(err, cat) {
+		promo.nombre = req.body.nombre;
+		promo.descripcion = req.body.descripcion;
+		promo.categoria = req.body.categoria;
+		promo.descuento = req.body.descuento;
+		promo.save(function(err) {
+			if(err) return res.send(500, err.message);
+			res.status(200).jsonp(cat);
+		});
+	});
+})
+
+//DELETE
+router.delete('/promocion/:id', function(req, res, next) {
+	Promocion.findById(req.params.id, function(err, cat) {
+		cat.remove(function(err) {
+			if(err) return res.send(500, err.message);
+			res.json({ message: 'Successfully deleted' });
+		});
+	});
+})
+
+
 
 module.exports = router;

@@ -25,5 +25,24 @@ var productoSchema = new Schema({
 mongoose.model('producto', productoSchema)
 var producto = mongoose.model('producto')
 
+var categoriaSchema = new Schema({
+	nombre: String,
+	descripcion: String
+})
+mongoose.model('categoria', categoriaSchema)
+var categoria = mongoose.model('categoria')
+
+
+var promocionSchema = new Schema({
+	nombre: String,
+	descripcion: String,
+	categoria: String,
+	descuento: Number
+})
+mongoose.model('promocion', promocionSchema)
+var promocion = mongoose.model('promocion')
+
 module.exports.User = User
 module.exports.producto = producto
+module.exports.categoria = categoria
+module.exports.promocion = promocion
