@@ -29,9 +29,9 @@ app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-mongoose.connect('mongodb://localhost/cms')
-console.log('Servidor Iniciado en Developent Env. localhost:3000')
-// mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq')
+//mongoose.connect('mongodb://localhost/cms')
+//console.log('Servidor Iniciado en Developent Env. localhost:3000')
+mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq')
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
