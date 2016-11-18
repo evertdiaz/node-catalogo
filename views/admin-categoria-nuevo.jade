@@ -125,14 +125,14 @@ html
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
               header.box-typical-header.panel-heading
                 h3.panel-title Ingresar Nuevo Producto
-              form
+              form#form-new(style='text-align:center')
                 label(for='nombre') Nombre:
                 input(type='text', name='nombre', placeholder='Ingresa el nombre')
                 br  
                 label(for='descripcion') Descripcion:
                 input(type='text', name='descripcion', placeholder='Ingresa la descripcion')
                 br  
-                input#guardar(type='submit', value='guardar')
+                button.btn#btn-categoria-new Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -240,6 +240,7 @@ html
       });
       });
     script(src='/admin/js/app.js')
+    script(src='/javascripts/admin.js')
 
 
 

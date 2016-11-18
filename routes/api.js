@@ -3,6 +3,7 @@ var router = express.Router()
 var Producto = require('../models').producto
 var Categoria = require('../models').categoria
 var Promocion = require('../models').promocion
+var User = require('../models').User
 
 //GET
 router.get('/productos', function(req, res, next) {
@@ -172,14 +173,14 @@ router.post('/promocion/', function(req, res, next) {
 
 // UPDATE
 router.put('/promocion/:id', function(req, res, next){
-	Promocion.findById(req.params.id, function(err, cat) {
+	Promocion.findById(req.params.id, function(err, promo) {
 		promo.nombre = req.body.nombre;
 		promo.descripcion = req.body.descripcion;
 		promo.categoria = req.body.categoria;
 		promo.descuento = req.body.descuento;
 		promo.save(function(err) {
 			if(err) return res.send(500, err.message);
-			res.status(200).jsonp(cat);
+			res.status(200).jsonp(promo);
 		});
 	});
 })
@@ -195,5 +196,26 @@ router.delete('/promocion/:id', function(req, res, next) {
 })
 
 
+//=======USUARIOS
+router.get('/user/:username', function(req, res, next) {
+	User.find({username: req.params.username}, function(err,us) {
+		res.send(us)
+	})
+})
 
+router.post('/user/', function(req, res, next) {
+	var username = req.body.username
+	var password = req.body.password
+	var newUser = new User()
+	newUser.username = username
+	newUser.password = password
+	newUser.save(function(err, savedUser) {
+		if(err) {
+			console.log(err)
+			return res.status(500).send()
+		}
+		return res.status(200).send()
+	})
+
+})
 module.exports = router;

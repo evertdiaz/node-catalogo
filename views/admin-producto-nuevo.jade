@@ -125,7 +125,7 @@ html
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
               header.box-typical-header.panel-heading
                 h3.panel-title Ingresar Nuevo Producto
-              form
+              form#form-new(style='text-align:center')
                 label(for='nombre') Nombre:
                 input(type='text', name='nombre', placeholder='Ingresa el nombre')
                 br  
@@ -145,7 +145,8 @@ html
                 label(for='colores') Colores (Separar por comas):
                 input(type='text', name='colores', placeholder='Ingresa los colores')
                 br  
-                input#guardar(type='submit', value='guardar')
+                br
+                button.btn#btn-producto-new Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -253,7 +254,4 @@ html
       });
       });
     script(src='/admin/js/app.js')
-
-
-
-
+    script(src='/javascripts/admin.js')

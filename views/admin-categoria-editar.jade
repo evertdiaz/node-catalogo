@@ -127,14 +127,15 @@ html
                 h3.panel-title Editar Producto
               each thing in data
                 h1= thing.nombre
-                form
+                form#form-edit(style='text-align:center')
                   label(for='nombre') Nombre:
                   input(type='text', name='nombre', value='#{thing.nombre}')
                   br  
                   label(for='descripcion') Descripcion:
                   input(type='text', name='descripcion', value='#{thing.descripcion}')
                   br  
-                  input#guardar(type='submit', value='guardar')
+                  input(type='text', value='#{thing._id}', style='display:none')
+                  button.btn#btn-categoria-edit Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -242,3 +243,4 @@ html
       });
       });
     script(src='/admin/js/app.js')
+    script(src='/javascripts/admin.js')

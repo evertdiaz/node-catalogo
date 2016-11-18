@@ -127,21 +127,24 @@ html
                 h3.panel-title Editar Producto
               each thing in data
                 h1= thing.nombre
-                form
+                form#form-edit(style='text-align:center')
                   label(for='nombre') Nombre:
                   input(type='text', name='nombre', value='#{thing.nombre}')
                   br
+                  label(for='descripcion') Descripcion:
+                  input(type='text', name='descripcion', value='#{thing.descripcion}')
+                  br  
+                  label(for='Categoria') Categoria:
                   select(name='categoria')
                     each thing1 in data2
                       option(value='#{thing1.nombre}')= thing1.nombre
                   br  
-
-                  label(for='descripcion') Descripcion:
-                  input(type='text', name='descripcion', value='#{thing.descripcion}')
-                  br  
                   label(for='descuento') Descuento:
-                  input(type='number', name='descuento', value='#{thing.descuento}')
-                  input#guardar(type='submit', value='guardar')
+                  input(type='text', name='descuento', value='#{thing.descuento}')
+                  br
+                  br
+                  input(type='text', value='#{thing._id}', style='display:none')
+                  button.btn#btn-promocion-edit Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -249,3 +252,4 @@ html
       });
       });
     script(src='/admin/js/app.js')
+    script(src='/javascripts/admin.js')

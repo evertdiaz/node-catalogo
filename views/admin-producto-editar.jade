@@ -127,17 +127,15 @@ html
                 h3.panel-title Editar Producto
               each thing in data
                 h1= thing.nombre
-                form
+                form#form-edit(style='text-align:center')
                   label(for='nombre') Nombre:
                   input(type='text', name='nombre', value='#{thing.nombre}')
                   br  
-                  select(name='profile')
+                  label(for='categoria') Categoria:
+                  select(name='categoria')
                     each thing1 in data2
                       option(value='#{thing1.nombre}')= thing1.nombre
                   br
-                  label(for='categoria') Categoria:
-                  input(type='text', name='categoria', value='#{thing.categoria}')
-                  br  
                   label(for='imagen') Imagen:
                   input(type='text', name='imagen', value='#{thing.img}')
                   br  
@@ -150,7 +148,9 @@ html
                   label(for='colores') Colores (Separar por comas):
                   input(type='text', name='colores', value='#{thing.colores}')
                   br  
-                  input#guardar(type='submit', value='guardar')
+                  br
+                  input(type='text', value='#{thing._id}', style='display:none')
+                  button.btn#btn-producto-edit Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -258,4 +258,4 @@ html
       });
       });
     script(src='/admin/js/app.js')
-
+    script(src='/javascripts/admin.js')

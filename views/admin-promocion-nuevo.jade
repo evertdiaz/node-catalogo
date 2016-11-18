@@ -125,27 +125,23 @@ html
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
               header.box-typical-header.panel-heading
                 h3.panel-title Ingresar Nuevo Producto
-              form
+              form#form-new(style='text-align:center')
                 label(for='nombre') Nombre:
                 input(type='text', name='nombre', placeholder='Ingresa el nombre')
-                br  
-                select(name='categoria')
-                  each thing1 in data
-                    option(value='#{thing1.nombre}')= thing1.nombre
-                br
-                label(for='imagen') Imagen:
-                input(type='text', name='imagen', placeholder='Ingresa la imagen')
                 br  
                 label(for='descripcion') Descripcion:
                 input(type='text', name='descripcion', placeholder='Ingresa la descripcion')
                 br  
-                label(for='precio') Precio:
+                label(for='categoria')
+                select(name='categoria')
+                  each thing1 in data
+                    option(value='#{thing1.nombre}')= thing1.nombre
+                br
+                label(for='precio') Descuento:
                 input(type='text', name='precio', placeholder='Ingresa el precio')
                 br  
-                label(for='colores') Colores (Separar por comas):
-                input(type='text', name='colores', placeholder='Ingresa los colores')
-                br  
-                input#guardar(type='submit', value='guardar')
+                br
+                button.btn#btn-promocion-new Guardar
               // .box-typical-body
             // .box-typical-dashboard
           // .col
@@ -253,7 +249,4 @@ html
       });
       });
     script(src='/admin/js/app.js')
-
-
-
-
+    script(src='/javascripts/admin.js')

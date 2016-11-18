@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Promocion = require('../models').promocion
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,7 +16,9 @@ router.get('/contactanos', function(req, res, next) {
 });
 
 router.get('/promociones', function(req, res, next) {
-  res.render('promociones', { title: 'Promociones' });
+	Promocion.find(function(err,promos) {
+		res.render('promociones', { data: promos, title: 'Promociones' });
+	})
 });
 
 module.exports = router;

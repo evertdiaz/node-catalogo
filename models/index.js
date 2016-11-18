@@ -5,11 +5,6 @@ var Schema =  mongoose.Schema
 var UserSchema = new Schema({
 	username: String,
 	password: String,
-	perfil: String,
-	bio: String,
-	skills: String,
-	phone: Number,
-	mail: String
 })
 mongoose.model('user', UserSchema) 
 var User = mongoose.model('user')

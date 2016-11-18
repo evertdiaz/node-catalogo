@@ -32,26 +32,31 @@ html(lang='en')
               .col-sm-4
                 br
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                .logo
+                .logo(style='padding-top:25px')
                   a(style='text-align:center', href='#')
                     img(src='../images/logos/1.png', alt='')
-            .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
+            .col-sm-12(style='text-align:center')
               ul.boutique-nav.main-menu.clone-main-menu
                 li.menu-item-has-children.item-megamenu
-                  a(style='color:white', href='/') Inicio
+                  a(href='/') Inicio
                 li.menu-item-has-children
-                  a(style='color:white', href='/quienes-somos') Quisuruco
+                  a(href='/quienes-somos') Quisuruco
                 li.menu-item-has-children
-                  a(style='color:white', href='/productos') Productos
+                  a(href='/productos') Productos
                 li.active.menu-item-has-children
                   a(href='/promociones') Promociones
                 li.menu-item-has-children
-                  a(style='color:white', href='/contactanos') Contacto
+                  a(href='/contactanos') Contacto
     br
+    each thing in data
+      h1= thing.nombre
+      h2= thing.descripcion
+      h3= thing.categoria 
+      h4 #{thing.descuento}%
     br
     br
 
-    footer.footer
+    footer.footer(style='padding-bottom:25px')
       .footer-top
         .container
           .row.flex-flow(style='color:white')
@@ -67,7 +72,7 @@ html(lang='en')
               br
             .col-sm-12(style='text-align:center')
               br
-              a(href='http://devs.com.pe') Diseñado por DEVS
+              a(href='http://devs.com.pe', target='_blank', style='font-size:10px;color:white') Diseñado por DEVS
     a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
       i.fa.fa-arrow-up
     script(type='text/javascript', src='../js/jquery-2.1.4.min.js')
