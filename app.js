@@ -44,10 +44,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 //===IMAGENES
 app.post('/upload', function(req, res) {
    //El modulo 'fs' (File System) que provee Nodejs nos permite manejar los archivos
-   var msj = process.env.PWD + '/public/images/products/' + req.files.archivo.originalFilename
-   res.send(msj)
-   console.log(req)
-   /*
    var fs = require('fs')
    var path = req.files.archivo.path
    console.log(process.env.HOME)
@@ -60,8 +56,7 @@ app.post('/upload', function(req, res) {
       fs.unlinkSync(path)
    })
    console.log('Archivo Subido')
-   res.send();
-   */
+   res.send("Archivo subido. Link: " + 'https://quisuruco.herokuapp.com/images/products/' + req.files.archivo.originalFilename);
 })
 
 
