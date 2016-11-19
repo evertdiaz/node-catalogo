@@ -144,9 +144,13 @@ html
                 br  
                 label(for='colores') Colores (Separar por comas):
                 input(type='text', name='colores', placeholder='Ingresa los colores')
-                br  
                 br
-                button.btn#btn-producto-new Guardar
+              form(action="/upload", method='POST', enctype='multipart/form-data')
+                label(for='imagen') Imagen:
+                input(type='file', name='imagen')
+                br
+                input.btn#btn-producto-new(type="submit", value='Subir')
+                br
               // .box-typical-body
             // .box-typical-dashboard
           // .col

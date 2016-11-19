@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var multer = require('multer');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +15,10 @@ var admin = require('./routes/admin');
 var api = require('./routes/api');
 
 var app = express();
+//ESTO SE AUMENTÓ PARA LAS IMAGENES
+app.use(bodyParser())
+var multipart = require('connect-multiparty')
+app.use(multipart())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -35,6 +40,30 @@ mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq'
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
+
+//===IMAGENES
+app.post('/upload', function(req, res) {
+   //El modulo 'fs' (File System) que provee Nodejs nos permite manejar los archivos
+   var msj = process.env.PWD + '/public/images/products/' + req.files.archivo.originalFilename
+   res.send(msj)
+   console.log(req)
+   /*
+   var fs = require('fs')
+   var path = req.files.archivo.path
+   console.log(process.env.HOME)
+   var newPath = process.env.PWD + '/public/images/products/' + req.files.archivo.originalFilename
+   var is = fs.createReadStream(path)
+   var os = fs.createWriteStream(newPath)
+   is.pipe(os)
+   is.on('end', function() {
+      //eliminamos el archivo temporal
+      fs.unlinkSync(path)
+   })
+   console.log('Archivo Subido')
+   res.send();
+   */
+})
+
 
 app.use('/', routes);
 app.use('/users', users);
