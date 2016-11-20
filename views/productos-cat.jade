@@ -75,9 +75,9 @@ html(lang='en')
                   .product-inner
                     .product-thumb.has-back-image
                       a(href='#')
-                        img(src='../images/products/left1.png', alt='')
+                        img(src='#{thing.img}', alt='')
                       a.back-image(href='#')
-                        img(src='../images/products/left2.png', alt='')
+                        img(src='#{thing.img}', alt='')
                       .add-cart-wapper
                         a.button.add_to_cart_button= thing.descripcion
                         br
@@ -107,7 +107,7 @@ html(lang='en')
               ul.product-categories
                 each thing1 in data2
                   li
-                    a(href='productos/categoria/#{thing1.nombre}')= thing1.nombre
+                    a(href='/productos/categoria/#{thing1.nombre}')= thing1.nombre
             // ./Product category
     footer.footer(style='padding-bottom:25px')
       .footer-top

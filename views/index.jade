@@ -82,97 +82,71 @@ html(lang='en')
         .tab-product
           ul.box-tabs.nav-tab.tab-owl-fade-effect
             li.active
-              a(data-animated='fadeInUp', data-toggle='tab', href='#tab-1') COLLARES
-            li
-              a(data-animated='slideInLeft', data-toggle='tab', href='#tab-2') ANILLOS
-            li
-              a(data-animated='slideInRight', data-toggle='tab', href='#tab-1') PULSERAS
+              a(data-animated='fadeInUp', data-toggle='tab', href='#tab-1') ALGUNOS DE NUESTROS PRODUCTOS
+            //.
+              li
+                a(data-animated='slideInLeft', data-toggle='tab', href='#tab-2') ANILLOS
+              li
+                a(data-animated='slideInRight', data-toggle='tab', href='#tab-1') PULSERAS
           .tab-content
             .tab-container
               #tab-1.tab-panel.active
                 ul.tab-list.owl-carousel.nav-style7.nav-center-center(data-nav='true', data-autoplay='false', data-dots='false', data-loop='true', data-margin='30', data-responsive='{"0":{"items":1},"600":{"items":2},"1000":{"items":4}}')
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/1.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/2.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/2.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/3.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/3.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/4.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/4.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/5.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-              #tab-2.tab-panel
-                ul.tab-list.owl-carousel.nav-style7.nav-center-center(data-nav='true', data-autoplay='false', data-dots='false', data-loop='true', data-margin='30', data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}')
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/5.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/6.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/6.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/7.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/7.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/8.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
-                  li.product-item
-                    .product-inner
-                      .product-thumb.has-back-image
-                        a(href='#')
-                          img(src='../images/products/8.jpg', alt='')
-                        a.back-image(href='#')
-                          img(src='../images/products/9.jpg', alt='')
-                        .gorup-button
-                          a.quick-view(href='#')
-                            i.fa.fa-search
+                  each thing, i in data
+                    if i < 4
+                      li.product-item
+                        .product-inner
+                          .product-thumb.has-back-image
+                            a(href='#')
+                              img(src='#{thing.img}', alt='')
+                            a.back-image(href='#')
+                              img(src='#{thing.img}', alt='')
+                            .gorup-button
+                              a.quick-view(href='/productos')
+                                i.fa.fa-search
+              //.
+                #tab-2.tab-panel
+                  ul.tab-list.owl-carousel.nav-style7.nav-center-center(data-nav='true', data-autoplay='false', data-dots='false', data-loop='true', data-margin='30', data-responsive='{"0":{"items":1},"600":{"items":3},"1000":{"items":4}}')
+                    li.product-item
+                      .product-inner
+                        .product-thumb.has-back-image
+                          a(href='#')
+                            img(src='../images/products/5.jpg', alt='')
+                          a.back-image(href='#')
+                            img(src='../images/products/6.jpg', alt='')
+                          .gorup-button
+                            a.quick-view(href='#')
+                              i.fa.fa-search
+                    li.product-item
+                      .product-inner
+                        .product-thumb.has-back-image
+                          a(href='#')
+                            img(src='../images/products/6.jpg', alt='')
+                          a.back-image(href='#')
+                            img(src='../images/products/7.jpg', alt='')
+                          .gorup-button
+                            a.quick-view(href='#')
+                              i.fa.fa-search
+                    li.product-item
+                      .product-inner
+                        .product-thumb.has-back-image
+                          a(href='#')
+                            img(src='../images/products/7.jpg', alt='')
+                          a.back-image(href='#')
+                            img(src='../images/products/8.jpg', alt='')
+                          .gorup-button
+                            a.quick-view(href='#')
+                              i.fa.fa-search
+                    li.product-item
+                      .product-inner
+                        .product-thumb.has-back-image
+                          a(href='#')
+                            img(src='../images/products/8.jpg', alt='')
+                          a.back-image(href='#')
+                            img(src='../images/products/9.jpg', alt='')
+                          .gorup-button
+                            a.quick-view(href='#')
+                              i.fa.fa-search
       .margin-top-60
         .section-title.text-center
           h3 NOVEDADES

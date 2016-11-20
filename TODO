@@ -6,3 +6,5 @@ Añadir eliminar en cada producto, promocin y categoria.
 Añadir el subir imagenes, que se suban a un servidor externo a un S3 y se guarde el enlace en MongoDB
 
 Hacer el diseño de las promociones en el frontend
+
+Falta vista unitaria de cada producto.
