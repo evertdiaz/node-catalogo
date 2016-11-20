@@ -42,12 +42,12 @@ var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
 
 //===IMAGENES
-app.post('/upload', function(req, res) {
+app.post('/product-uploaded', function(req, res) {
    //El modulo 'fs' (File System) que provee Nodejs nos permite manejar los archivos
    var fs = require('fs')
    var path = req.files.archivo.path
    console.log(process.env.HOME)
-   var newPath = process.env.PWD + '/public/images/products/' + req.files.archivo.originalFilename
+   var newPath = process.env.PWD + '/public/images/productos/' + req.files.archivo.originalFilename
    var is = fs.createReadStream(path)
    var os = fs.createWriteStream(newPath)
    is.pipe(os)
@@ -56,7 +56,25 @@ app.post('/upload', function(req, res) {
       fs.unlinkSync(path)
    })
    console.log('Archivo Subido')
-   res.send("Archivo subido. Link: " + 'https://quisuruco.herokuapp.com/images/products/' + req.files.archivo.originalFilename);
+   res.render('admin-product-uploaded', {nombre: req.files.archivo.originalFilename, title:"Archivo Subido"})
+})
+
+//===IMAGENES
+app.post('/promocion-uploaded', function(req, res) {
+   //El modulo 'fs' (File System) que provee Nodejs nos permite manejar los archivos
+   var fs = require('fs')
+   var path = req.files.archivo.path
+   console.log(process.env.HOME)
+   var newPath = process.env.PWD + '/public/images/promociones/' + req.files.archivo.originalFilename
+   var is = fs.createReadStream(path)
+   var os = fs.createWriteStream(newPath)
+   is.pipe(os)
+   is.on('end', function() {
+      //eliminamos el archivo temporal
+      fs.unlinkSync(path)
+   })
+   console.log('Archivo Subido')
+   res.render('admin-promocion-uploaded', {nombre: req.files.archivo.originalFilename, title:"Archivo Subido"})
 })
 
 

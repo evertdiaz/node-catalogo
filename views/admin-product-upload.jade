@@ -123,38 +123,16 @@ html
             br
           .col-xl-6.dahsboard-column
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
-              header.box-typical-header.panel-heading
-                h3.panel-title Ingresar Nuevo Producto
-              form#form-new(style='text-align:center')
-                label(for='nombre') Nombre:
-                input(type='text', name='nombre', placeholder='Ingresa el nombre')
-                br  
-                select(name='categoria')
-                  each thing1 in data
-                    option(value='#{thing1.nombre}')= thing1.nombre
+              header.box-typical-header.panel-heading(style='text-align:center')
+                h3.panel-title Subir Imagen:
+              br
+              br
+              form(action='/product-uploaded', method='POST', enctype='multipart/form-data', style='text-align:center')
+                input.btn(type='file', name='archivo')
                 br
-                label(for='imagen') Imagen:
-                input(type='text', name='imagen', placeholder='Ingresa enlace de imagen')
                 br
-                a(target='_blank', href='/admin/upload/product') Para subir imagen Click Aquí.
-                br  
+                input.btn(type='submit', value='subir')
                 br
-                label(for='descripcion') Descripcion:
-                input(type='text', name='descripcion', placeholder='Ingresa la descripcion')
-                br  
-                label(for='precio') Precio:
-                input(type='text', name='precio', placeholder='Ingresa el precio')
-                br  
-                label(for='colores') Colores (Separar por comas):
-                input(type='text', name='colores', placeholder='Ingresa los colores')
-                br  
-                br
-                button.btn#btn-producto-new Guardar
-              // .box-typical-body
-            // .box-typical-dashboard
-          // .col
-          
-      // .container-fluid
     // .page-content
     script(src='/admin/js/lib/jquery/jquery.min.js')
     script(src='/admin/js/lib/tether/tether.min.js')

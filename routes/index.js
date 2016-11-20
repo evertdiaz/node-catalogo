@@ -20,8 +20,4 @@ router.get('/promociones', function(req, res, next) {
 		res.render('promociones', { data: promos, title: 'Promociones' });
 	})
 });
-
-router.get('/subida', function(req, res, next) {
-	res.render('pruebaupload', { title: "Hola" })
-})
 module.exports = router;

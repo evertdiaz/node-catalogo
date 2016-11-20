@@ -9,6 +9,14 @@ router.get('/', function(req, res, next) {
 	res.render('admin-login', {title:'Login'})
 });
 
+router.get('/upload/product', function(req, res, next) {
+	res.render('admin-product-upload', { title: "Hola" })
+})
+
+router.get('/upload/promocion', function(req, res, next) {
+	res.render('admin-promocion-upload', { title: "Hola" })
+})
+
 router.get('/home', function(req, res, next) {
 	res.render('admin', { title: 'DASHBOARD'})
 	// Temporalmente acá solo enviar las colecciones de usuarios y en frontend validar si coinciden con el ingresado
