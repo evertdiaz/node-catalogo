@@ -24,7 +24,7 @@ $('#btn-producto-new').on('click', function() {
 
 $('#btn-producto-edit').on('click', function() {
 	var $data = $('#form-edit input[type="text"]')
-  var cat = $('#form-edit select').val()
+  	var cat = $('#form-edit select').val()
 	var data = $.map($data, obj => obj.value)
 	var ID = data[5]
 	var link = '/api/producto/'+ID
@@ -45,6 +45,22 @@ $('#btn-producto-edit').on('click', function() {
 	  		location.href = '/admin/productos'
 	  	}
 	  })
+})
+
+$('#btn-producto-delete').on('click', function() {
+	var $data = $('#form-edit input[type="text"]')
+	var data = $.map($data, obj => obj.value)
+	var id = data[5]
+	var link = '/api/producto/' + id
+	$.ajax({
+		url: link,
+		type: 'DELETE',
+		success: function(result) {
+			alert('Producto Borrado con éxito!')
+			location.href = '/admin/productos'
+		}
+
+	})
 })
 
 
@@ -86,6 +102,23 @@ $('#btn-categoria-edit').on('click', function() {
 	  	}
 	  })
 })
+
+$('#btn-categoria-delete').on('click', function() {
+	var $data = $('#form-edit input[type="text"]')
+	var data = $.map($data, obj => obj.value)
+	var ID = data[2]
+	var link = '/api/categoria/' + ID
+	$.ajax({
+		url: link,
+		type: 'DELETE',
+		success: function(result) {
+			alert('Categoria Borrado con éxito!')
+			location.href = '/admin/categorias'
+		}
+
+	})
+})
+
 
 // ================PROMOCIONES
 $('#btn-promocion-new').on('click', function() {
@@ -130,6 +163,22 @@ $('#btn-promocion-edit').on('click', function() {
 	  		location.href = '/admin/productos'
 	  	}
 	  })
+})
+
+$('#btn-promocion-delete').on('click', function() {
+	var $data = $('#form-edit input[type="text"]')
+	var data = $.map($data, obj => obj.value)
+	var ID = data[3]
+	var link = '/api/promocion/' + ID
+	$.ajax({
+		url: link,
+		type: 'DELETE',
+		success: function(result) {
+			alert('Promocion Borrado con éxito!')
+			location.href = '/admin/promociones'
+		}
+
+	})
 })
 
 // ========= LOGIN

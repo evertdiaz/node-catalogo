@@ -117,4 +117,8 @@ router.get('/ayuda', function(req, res, next) {
 	res.render('ayuda', { title: 'Ayuda' })
 })
 
+router.get('/gracias', function(req, res, next) {
+	res.render('admin-gracias', { title: 'Gracias' })
+})
+
 module.exports = router;

@@ -25,7 +25,7 @@ html
   body.with-side-menu.control-panel.control-panel-compact
     header.site-header
       .container-fluid
-        a.site-logo(href='#')
+        a.site-logo(href='/admin/home')
           img.hidden-md-down(src='/admin/img/logo-2.png', alt='')
           img.hidden-lg-up(src='/admin/img/logo-2-mob.png', alt='')
         button#show-hide-sidebar-toggle.show-hide-sidebar
@@ -114,8 +114,8 @@ html
       .container-fluid
         .row
           .col-xl-12(style='text-align:center')
-            h1 Bienvenido al Sistema de Administración web
-            p Este es un rápido resumen de tu producto
+            h1 Sección de edición de Promoción
+            p Edite la información necesaria de su promoción.
           // .col
         // .row
         .row
@@ -124,7 +124,7 @@ html
           .col-xl-6.dahsboard-column
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
               header.box-typical-header.panel-heading
-                h3.panel-title Editar Producto
+                h3.panel-title Editar Promoción
               each thing in data
                 h1= thing.nombre
                 form#form-edit(style='text-align:center')
@@ -145,6 +145,9 @@ html
                   br
                   input(type='text', value='#{thing._id}', style='display:none')
                   button.btn#btn-promocion-edit Guardar
+                  br
+                  br
+                  a.btn.btn-warning#btn-promocion-delete Eliminar
               // .box-typical-body
             // .box-typical-dashboard
           // .col

@@ -1,10 +1,7 @@
-NOTA:
-Al momento de modificar una categoria se debe hacer un querie de todos los productos que tengan esa categoria y actualizar espacio de categoria. Lo optimo aca es hacerlo por surrogate
 
-Añadir eliminar en cada producto, promocin y categoria.
 
-Añadir el subir imagenes, que se suban a un servidor externo a un S3 y se guarde el enlace en MongoDB
-
-Hacer el diseño de las promociones en el frontend
-
-Falta vista unitaria de cada producto.
+*HACER DISEÑO DE PROMOCIONES EN FRONTEND.
+*VISTA UNITARIA DE PRODUCTO EN FRONTEND.
+*AUMENTAR DIVS QUE HAGAN QUE LAS IMAGENES SE VEA MAXIMO CUADRADAS, EN EL FRONTEND.
+*HACER RESIZE A LAS IMAGENES.
+*COMPRIMIR LAS IMAGENES QUE SE VAN A SUBIR.

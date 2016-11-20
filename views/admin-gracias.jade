@@ -5,29 +5,29 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     title Devs - Sistema de Administracion
-    link(href='/admin/img/favicon.144x144.png', rel='apple-touch-icon', type='image/png', sizes='144x144')
-    link(href='/admin/img/favicon.114x114.png', rel='apple-touch-icon', type='image/png', sizes='114x114')
-    link(href='/admin/img/favicon.72x72.png', rel='apple-touch-icon', type='image/png', sizes='72x72')
-    link(href='/admin/img/favicon.57x57.png', rel='apple-touch-icon', type='image/png')
-    link(href='/admin/img/favicon.png', rel='icon', type='image/png')
-    link(href='/admin/img/favicon.ico', rel='shortcut icon')
+    link(href='img/favicon.144x144.png', rel='apple-touch-icon', type='image/png', sizes='144x144')
+    link(href='img/favicon.114x114.png', rel='apple-touch-icon', type='image/png', sizes='114x114')
+    link(href='img/favicon.72x72.png', rel='apple-touch-icon', type='image/png', sizes='72x72')
+    link(href='img/favicon.57x57.png', rel='apple-touch-icon', type='image/png')
+    link(href='img/favicon.png', rel='icon', type='image/png')
+    link(href='img/favicon.ico', rel='shortcut icon')
     // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     //if lt IE 9
       script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
       script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
-    link(rel='stylesheet', href='/admin/css/lib/lobipanel/lobipanel.min.css')
-    link(rel='stylesheet', href='/admin/css/separate/vendor/lobipanel.min.css')
-    link(rel='stylesheet', href='/admin/css/lib/jqueryui/jquery-ui.min.css')
-    link(rel='stylesheet', href='/admin/css/separate/pages/widgets.min.css')
-    link(rel='stylesheet', href='/admin/css/lib/font-awesome/font-awesome.min.css')
-    link(rel='stylesheet', href='/admin/css/lib/bootstrap/bootstrap.min.css')
-    link(rel='stylesheet', href='/admin/css/main.css')
+    link(rel='stylesheet', href='css/lib/lobipanel/lobipanel.min.css')
+    link(rel='stylesheet', href='css/separate/vendor/lobipanel.min.css')
+    link(rel='stylesheet', href='css/lib/jqueryui/jquery-ui.min.css')
+    link(rel='stylesheet', href='css/separate/pages/widgets.min.css')
+    link(rel='stylesheet', href='css/lib/font-awesome/font-awesome.min.css')
+    link(rel='stylesheet', href='css/lib/bootstrap/bootstrap.min.css')
+    link(rel='stylesheet', href='css/main.css')
   body.with-side-menu.control-panel.control-panel-compact
     header.site-header
       .container-fluid
         a.site-logo(href='/admin/home')
-          img.hidden-md-down(src='/admin/img/logo-2.png', alt='')
-          img.hidden-lg-up(src='/admin/img/logo-2-mob.png', alt='')
+          img.hidden-md-down(src='img/logo-2.png', alt='')
+          img.hidden-lg-up(src='img/logo-2-mob.png', alt='')
         button#show-hide-sidebar-toggle.show-hide-sidebar
           span toggle menu
         button.hamburger.hamburger--htla
@@ -37,7 +37,7 @@ html
             .site-header-shown
               .dropdown.user-menu
                 button#dd-user-menu.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                  img(src='/admin/img/avatar-2-64.png', alt='')
+                  img(src='img/avatar-2-64.png', alt='')
                 .dropdown-menu.dropdown-menu-right(aria-labelledby='dd-user-menu')
                   a.dropdown-item
                     span.font-icon.glyphicon.glyphicon-user
@@ -79,15 +79,15 @@ html
     nav.side-menu
       ul.side-menu-list
         li.blue-dirty
-          a(href='/admin/productos')
+          a(href='productos')
             span.glyphicon.glyphicon-th
             span.lbl Productos
         li.magenta.with-sub
-          a(href='/admin/categorias')
+          a(href='categorias')
             span.glyphicon.glyphicon-list-alt
             span.lbl Categorías
         li.brown.with-sub
-          a(href='/admin/promociones')
+          a(href='promociones')
             span.glyphicon.glyphicon-list
             span.lbl Promociones
         li.orange-red.with-sub
@@ -114,30 +114,38 @@ html
       .container-fluid
         .row
           .col-xl-12(style='text-align:center')
-            h1 ¡Tu archivo fue cargado con éxito!
-            p A continuación te dejamos el enlace:
+            h1 ¡Estamos para ayudarte!
+            p Envíanos cualquier duda que tengas.
           // .col
         // .row
         .row
-          .col-xl-3
-            br
+          .col-xl-3.dahsboard-column
+            
+              // .box-typical-body
+            // .box-typical-dashboard
+          // .col
           .col-xl-6.dahsboard-column
             section.box-typical.box-typical-dashboard.panel.panel-default.scrollable
-              header.box-typical-header.panel-heading(style='text-align:center')
-                h3.panel-title Copia y pega este enlace en la pestaña anterior:
-              br
-              br
-              div(style='text-align:center')
-                p.blue https://quisuruco.herokuapp.com/images/productos/#{nombre}
-
+              header.box-typical-header.panel-heading
+                h3.panel-title ¡Gracias por contactarte!
+              .box-typical-body.panel-body(style='text-align:center')
+                br
+                br
+                h4 ¡Un asesor se comunicará contigo a la brevedad para resolver tus dudas!
+                p Mientras tanto, conoce nuestras últimas noticias y ofertas:
+                a(target='_blank', href='https://facebook.com/devsimagendigital') Haz click AQUÍ
+              // .box-typical-body
+            // .box-typical-dashboard
+          // .col
+      // .container-fluid
     // .page-content
-    script(src='/admin/js/lib/jquery/jquery.min.js')
-    script(src='/admin/js/lib/tether/tether.min.js')
-    script(src='/admin/js/lib/bootstrap/bootstrap.min.js')
-    script(src='/admin/js/plugins.js')
-    script(type='text/javascript', src='/admin/js/lib/jqueryui/jquery-ui.min.js')
-    script(type='text/javascript', src='/admin/js/lib/lobipanel/lobipanel.min.js')
-    script(type='text/javascript', src='/admin/js/lib/match-height/jquery.matchHeight.min.js')
+    script(src='js/lib/jquery/jquery.min.js')
+    script(src='js/lib/tether/tether.min.js')
+    script(src='js/lib/bootstrap/bootstrap.min.js')
+    script(src='js/plugins.js')
+    script(type='text/javascript', src='js/lib/jqueryui/jquery-ui.min.js')
+    script(type='text/javascript', src='js/lib/lobipanel/lobipanel.min.js')
+    script(type='text/javascript', src='js/lib/match-height/jquery.matchHeight.min.js')
     script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
     script.
       $(document).ready(function() {
@@ -231,5 +239,4 @@ html
       }, 1000);
       });
       });
-    script(src='/admin/js/app.js')
-    script(src='/javascripts/admin.js')
+    script(src='js/app.js')
