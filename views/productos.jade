@@ -36,30 +36,31 @@ html(lang='en')
               .col-sm-4
                 br
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                .logo(style='padding-top:25px')
+                .logo(style='padding-top:2px')
                   a(style='text-align:center', href='#')
-                    img(src='../images/logos/1.png', alt='')
-            .col-sm-12(style='text-align:center')
+                    img(src='../images/logos/logo.svg', alt='')
+            .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
               ul.boutique-nav.main-menu.clone-main-menu
                 li.menu-item-has-children.item-megamenu
-                  a(href='/') Inicio
+                  a(style='color:white', href='/') Inicio
                 li.menu-item-has-children
-                  a(href='/quienes-somos') Quisuruco
+                  a(style='color:white', href='/quienes-somos') Quisuruco
                 li.active.menu-item-has-children
                   a(href='/productos') Productos
                 li.menu-item-has-children
-                  a(href='/promociones') Promociones
+                  a(style='color:white', href='/promociones') Promociones
                 li.menu-item-has-children
-                  a(href='/contactanos') Contacto
+                  a(style='color:white', href='/contactanos') Contacto
+    
     .main-container.shop-with-banner.left-slidebar
-      .block-paralax3(style="background-image: url('../images/subscribe.jpg');background-repeat:no-repeat;margin-top:0px")
+      .block-paralax3(style="background-image: url('../images/productos.jpg');background-repeat:no-repeat;margin-top:0px")
         .container
           .row
             .col-sm-12.col-md-3
               br
             // Añadir un fondo con transparencia
             .col-sm-12.col-md-9(style='text-align:left')
-              h1 PRODUCTOS
+              h1 .
       .container(style='margin-top:50px')
         .breadcrumbs.style2
           a(href='/') Inicio
@@ -103,11 +104,11 @@ html(lang='en')
           .col-sm-4.col-md-3.sidebar
             // Product category
             .widget.widget_product_categories
-              h2.widget-title Categories
+              h2.widget-title Categorías
               ul.product-categories
                 each thing1 in data2
                   li
-                    a(href='/productos/#{thing1.nombre}')= thing1.nombre
+                    a(href='/productos/#{thing1.nombre}', style='#002e9d')= thing1.nombre
             // ./Product category
     footer.footer(style='padding-bottom:25px')
       .footer-top
@@ -115,11 +116,11 @@ html(lang='en')
           .row.flex-flow(style='color:white')
             .col-sm-1
               br
-            .col-sm-3(style='text-align:center')
+            .col-sm-3(style='text-align:center;margin-top:20px')
               | Av. Prueba 123, Lima
             .col-sm-4(style='text-align:center')
-              strong  QUISURUCO 
-            .col-sm-3(style='text-align:center')
+              img(src='../images/logos/isotipo.svg', width='100px', alt='')
+            .col-sm-3(style='text-align:center;margin-top:20px')
               | (01) 123 4567
             .col-sm-1
               br
