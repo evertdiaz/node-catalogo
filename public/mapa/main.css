@@ -1,0 +1,19 @@
+/* map */
+#map {
+   display: block;
+	height: 486px;
+   width: 100%;
+   background-color: #F6F4EF;
+}
+#map img { max-width:inherit !important; }
+#map .map-error {
+  text-align: center;
+  padding-top: 48px;
+  color: #C0B491;
+  font-size: 14px;
+}
+#map .fa {
+	font-size: 60px;
+	color: #1F1F1F;
+}
+

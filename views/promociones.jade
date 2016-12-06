@@ -23,18 +23,37 @@ html(lang='en')
           span.icon.pe-7s-close
     #header-ontop.is-sticky
     header#header.header.style3
-      .main-menu-wapper
+      #fb-root
+      script.
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      .container(style='margin:0px;padding-left:15px;padding-right:0px;width:100vw;background:#e9eef8')
         .row
           .col-sm-12.col-md-12.menu-wapper
             .top-header(style='padding-top:0px')
               span.mobile-navigation
                 i.fa.fa-bars
-              .col-sm-4
-                br
+              
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
                 .logo(style='padding-top:2px')
                   a(style='text-align:center', href='#')
                     img(src='../images/logos/logo.svg', alt='')
+              .col-sm-4
+                br
+              .col-sm-4.col-md-4.logo-wapper(style='text-align:right;padding-right:50px')
+                br
+                p(style='color:#123387;margin-bottom:2.5px') Av. abancay 291. 
+                p(style='color:#123387;margin-bottom:2.5px') Interior 315.
+                p(style='color:#123387;margin-bottom:2.5px') 970 412 625
+                .fb-like(style='text-align: right;color:#123387', data-href='https://www.facebook.com/Quisuruco-Jewelry-1650814048492224/', data-width='50', data-layout='standard', data-action='like', data-show-faces='true', data-share='false')
+      .main-menu-wapper
+        .row
+          
             .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
               ul.boutique-nav.main-menu.clone-main-menu
                 li.menu-item-has-children.item-megamenu
@@ -91,11 +110,11 @@ html(lang='en')
             .col-sm-1
               br
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | Av. Prueba 123, Lima
+              | Av. abancay 291. Interior 315.
             .col-sm-4(style='text-align:center')
               img(src='../images/logos/isotipo.svg', width='100px', alt='')
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | (01) 123 4567
+              | 970 412 625
             .col-sm-1
               br
             .col-sm-12(style='text-align:center')

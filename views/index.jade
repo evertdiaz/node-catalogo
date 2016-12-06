@@ -21,39 +21,58 @@ html(lang='en')
     link(href='https://fonts.googleapis.com/css?family=Playfair+Display:400italic,400,700,700italic,900,900italic', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Roboto:300,100,100italic,300italic,400,400italic,500,500italic,700,700italic,900,900italic', rel='stylesheet', type='text/css')
   body.home
+    #fb-root
+    script.
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     #box-mobile-menu.box-mobile-menu.full-height.full-width
       .box-inner
         span.close-menu
           span.icon.pe-7s-close
     #header-ontop.is-sticky
-    header#header.header.style3
+    header#header.header.style3(style='background:black')
+      .container(style='margin:0px;padding-left:15px;padding-right:0px;width:100vw;background:#e9eef8')
+        .row
+          .col-sm-12.col-md-12.menu-wapper
+            .top-header(style='padding-top:0px')
+              span.mobile-navigation
+                i.fa.fa-bars
+              
+              .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
+                .logo(style='padding-top:2px')
+                  a(style='text-align:center', href='#')
+                    img(src='../images/logos/logo.svg', alt='')
+              .col-sm-4
+                br
+              .col-sm-4.col-md-4.logo-wapper(style='text-align:right;padding-right:50px')
+                br
+                p(style='color:#123387;margin-bottom:2.5px') Av. abancay 291. 
+                p(style='color:#123387;margin-bottom:2.5px') Interior 315.
+                p(style='color:#123387;margin-bottom:2.5px') 970 412 625
+                .fb-like(style='text-align: right;color:#123387', data-href='https://www.facebook.com/Quisuruco-Jewelry-1650814048492224/', data-width='50', data-layout='standard', data-action='like', data-show-faces='true', data-share='false')
+
       .container
         .main-menu-wapper
           .row
-            .col-sm-12.col-md-12.menu-wapper
-              .top-header(style='padding-top:0px')
-                span.mobile-navigation
-                  i.fa.fa-bars
-                .col-sm-4
-                  br
-                .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
-                  .logo(style='padding-top:2px')
-                    a(style='text-align:center', href='#')
-                      img(src='../images/logos/logo.svg', alt='')
               .col-sm-12(style='text-align:center')
                 ul.boutique-nav.main-menu.clone-main-menu
                   li.active.menu-item-has-children.item-megamenu
                     a(href='/') Inicio
                   li.menu-item-has-children
-                    a(href='/quienes-somos') Quisuruco
+                    a(style='color:white', href='/quienes-somos') Quisuruco
                   li.menu-item-has-children
-                    a(href='/productos') Productos
+                    a(style='color:white', href='/productos') Productos
                   li.menu-item-has-children
-                    a(href='/promociones') Promociones
+                    a(style='color:white', href='/promociones') Promociones
                   li.menu-item-has-children
-                    a(href='/contactanos') Contacto
+                    a(style='color:white', href='/contactanos') Contacto
     // Home slide
-    .home-slide3.owl-carousel.nav-style3.nav-center-center(data-animateout='fadeOut', data-animatein='fadeIn', data-items='1', data-nav='true', data-dots='false', data-loop='true', data-autoplay='true')
+    .home-slide3.owl-carousel.nav-style3.nav-center-center(data-animateout='fadeOut', data-animatein='fadeIn', data-items='1', data-nav='true', data-dots='true', data-loop='true', data-autoplay='false')
       img(src='../images/slides/index1.jpg', alt='')
       img(src='../images/slides/index2.jpg', alt='')
       img(src='../images/slides/index3.jpg', alt='')
@@ -177,11 +196,11 @@ html(lang='en')
             .col-sm-1
               br
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | Av. Prueba 123, Lima
+              | Av. abancay 291. Interior 315.
             .col-sm-4(style='text-align:center')
               img(src='../images/logos/isotipo.svg', width='100px', alt='')
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | (01) 123 4567
+              | 970 412 625
             .col-sm-1
               br
             .col-sm-12(style='text-align:center')
@@ -190,11 +209,14 @@ html(lang='en')
     a.scroll_top(href='#', title='Scroll to Top', style='display: block;')
       i.fa.fa-arrow-up
     script(type='text/javascript', src='../js/jquery-2.1.4.min.js')
-    script(type='text/javascript', src='../js/bootstrap.min.js')
     script(type='text/javascript', src='../js/owl.carousel.min.js')
+    
+
+
+    script(type='text/javascript', src='../js/bootstrap.min.js')
     script(type='text/javascript', src='../js/chosen.jquery.min.js')
     script(type='text/javascript', src='../js/Modernizr.js')
-    script(type='text/javascript', src='../js/jquery-ui.min.js')
+    
     script(type='text/javascript', src='../js/lightbox.min.js')
     script(type='text/javascript', src='../js/masonry.pkgd.min.js')
     script(type='text/javascript', src='../js/../imagesloaded.pkgd.min.js')

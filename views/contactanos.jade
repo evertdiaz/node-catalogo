@@ -27,18 +27,37 @@ html(lang='en')
           span.icon.pe-7s-close
     #header-ontop.is-sticky
     header#header.header.style3
-      .main-menu-wapper
+      #fb-root
+      script.
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      .container(style='margin:0px;padding-left:15px;padding-right:0px;width:100vw;background:#e9eef8')
         .row
           .col-sm-12.col-md-12.menu-wapper
             .top-header(style='padding-top:0px')
               span.mobile-navigation
                 i.fa.fa-bars
-              .col-sm-4
-                br
+              
               .col-sm-4.col-md-4.logo-wapper(style='text-align:center')
                 .logo(style='padding-top:2px')
                   a(style='text-align:center', href='#')
                     img(src='../images/logos/logo.svg', alt='')
+              .col-sm-4
+                br
+              .col-sm-4.col-md-4.logo-wapper(style='text-align:right;padding-right:50px')
+                br
+                p(style='color:#123387;margin-bottom:2.5px') Av. abancay 291. 
+                p(style='color:#123387;margin-bottom:2.5px') Interior 315.
+                p(style='color:#123387;margin-bottom:2.5px') 970 412 625
+                .fb-like(style='text-align: right;color:#123387', data-href='https://www.facebook.com/Quisuruco-Jewelry-1650814048492224/', data-width='50', data-layout='standard', data-action='like', data-show-faces='true', data-share='false')
+      .main-menu-wapper
+        .row
+         
             .col-sm-12(style='text-align:center;padding:0px;background:black;color:white')
               ul.boutique-nav.main-menu.clone-main-menu
                 li.menu-item-has-children.item-megamenu
@@ -60,10 +79,23 @@ html(lang='en')
               h1(style='font-weight:bold') .
     .container(style='margin-top:50px;margin-bottom:25px')
       .row
-        .col-md-2
+        .col-md-1
           br
-        .col-sm-12.col-md-8(style='text-align:center')
+        .col-sm-12.col-md-5(style='text-align:center')
           h2 ESCRÍBENOS
+          form(action='https://formspree.io/contacto@joyeriaquisuruco.com', method='POST')
+            input(style='margin-bottom:10px', name='Nombre', type='text', size='30', placeholder='Nombre')
+            br
+            input(style='margin-bottom:10px', name='Correo', type='text', size='30', placeholder='Correo')
+            br
+            input(style='margin-bottom:10px', name='Numero', type='text', size='30', placeholder='Numero')
+            br
+            input(type='hidden', name='_next', value='/gracias')
+            textarea(style='margin-bottom:10px', name='Mensaje', type='text', rows='10', cols='40') Cuéntanos, en qué podemos ayudarte.
+            br
+            input(style='margin-bottom:10px', type='submit')
+        .col-sm-12.col-md-5(style='text-align:center')
+          h2 HAZ TU PEDIDO
           form(action='https://formspree.io/contacto@joyeriaquisuruco.com', method='POST')
             input(style='margin-bottom:10px', name='Nombre', type='text', size='30', placeholder='Nombre')
             br
@@ -74,10 +106,11 @@ html(lang='en')
             input(type='hidden', name='_next', value='/gracias')
             input(style='margin-bottom:10px', name='Producto Interes', type='text', size='30', placeholder='Producto de Interes')
             br
-            textarea(style='margin-bottom:10px', name='Mensaje', type='text', rows='10', cols='40') Cuéntanos, en qué podemos ayudarte.
+            textarea(style='margin-bottom:10px', name='Mensaje', type='text', rows='10', cols='40') Observaciones.
             br
             input(style='margin-bottom:10px', type='submit')
           br
+        .col-sm-12.col-md-12(style='text-align:center')
           br
           i.fa.fa-whatsapp(style='font-size:50px')
           h3 970 412 625 / 952 164 828 / 978 466 950
@@ -88,6 +121,11 @@ html(lang='en')
             i.fa.fa-twitter   
           a(target='_blank', href='https://instagram.com', style='font-size:30px;margin-left:10px')
             i.fa.fa-instagram   
+    .col-sm-12.col-md-12(style='margin:0px;padding:0px')
+      #map
+        p.map-error Something went wrong.        
+
+  
     footer.footer(style='padding-bottom:25px')
       .footer-top
         .container
@@ -95,11 +133,11 @@ html(lang='en')
             .col-sm-1
               br
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | Av. Prueba 123, Lima
+              | Av. abancay 291. Interior 315.
             .col-sm-4(style='text-align:center')
               img(src='../images/logos/isotipo.svg', width='100px', alt='')
             .col-sm-3(style='text-align:center;margin-top:20px')
-              | (01) 123 4567
+              | 970 412 625
             .col-sm-1
               br
             .col-sm-12(style='text-align:center')
@@ -122,3 +160,8 @@ html(lang='en')
     script(type='text/javascript', src='../js/jquery.magnific-popup.min.js')
     script(type='text/javascript', src='../js/masonry.js')
     script(type='text/javascript', src='../js/functions.js')
+    script(type='text/javascript', src='http://maps.google.com/maps/api/js?sensor=true')
+    script(type='text/javascript', src='../js/gmaps.js')
+    script(type='text/javascript', src='../js/init.js')
+    
+
