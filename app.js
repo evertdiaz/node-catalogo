@@ -36,7 +36,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //mongoose.connect('mongodb://localhost/cms')
 //console.log('Servidor Iniciado en Developent Env. localhost:3000')
-mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq')
+
+mongoose.connect('mongodb://admin:admin@ds133438.mlab.com:33438/heroku_92hjb4b8')
+//mongoose.connect('mongodb://admin:admin@ds151697.mlab.com:51697/heroku_2x3jx6cq')
 
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
